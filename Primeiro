@@ -1,11 +1,11 @@
 CREATE TABLE ALUNO  
 (  
-    Nr_RGM NUMBER(8) NOT NULL,  
-    Nm_Nome VARCHAR2(40) NOT NULL,  
-    Nm_Pai VARCHAR2(40) NOT NULL,  
-    Nm_Mae VARCHAR(40) NOT NULL,  
+    Nr_RGM NUMBER (8) NOT NULL,  
+    Nm_Nome VARCHAR2 (40) NOT NULL,  
+    Nm_Pai VARCHAR2 (40) NOT NULL,  
+    Nm_Mae VARCHAR (40) NOT NULL,  
     Dt_Nascimento DATE NOT NULL,  
-    Id_Sexo CHAR(1)  
+    Id_Sexo CHAR (1)  
     CONSTRAINT PK_ALUNO PRIMARY KEY(Nr_RGM)  
 );
 
@@ -17,13 +17,13 @@ VALUES
  
 CREATE TABLE CLASSE 
 ( 
-    Cd_Classe NUMBER(8) NOT NULL, 
-    Nr_AnoLetivo NUMBER(4) NOT NULL, 
-    Nr_Serie NUMBER(2) NOT NULL, 
-    Sg_Turma VARCHAR2(2) NOT NULL, 
-    Cd_Escola NUMBER(6) NOT NULL, 
-    Cd_Grau NUMBER(2) NOT NULL, 
-    Cd_Periodo NUMBER(2) NOT NULL, 
+    Cd_Classe NUMBER (8) NOT NULL, 
+    Nr_AnoLetivo NUMBER (4) NOT NULL, 
+    Nr_Serie NUMBER (2) NOT NULL, 
+    Sg_Turma VARCHAR2 (2) NOT NULL, 
+    Cd_Escola NUMBER (6) NOT NULL, 
+    Cd_Grau NUMBER (2) NOT NULL, 
+    Cd_Periodo NUMBER (2) NOT NULL, 
     CONSTRAINT PK_CLASSE PRIMARY KEY(Cd_Classe) 
 );
 
@@ -35,8 +35,8 @@ VALUES
 
 CREATE TABLE MATRICULA
 ( 
-    Nr_RGM NUMBER(8) NOT NULL, 
-    Cd_Classe NUMBER(8) NOT NULL, 
+    Nr_RGM NUMBER (8) NOT NULL, 
+    Cd_Classe NUMBER (8) NOT NULL, 
     Dt_Matricula  DATE NOT NULL, 
     CONSTRAINT FK_MATRICULA_REF_ALUNO FOREIGN KEY(Nr_RGM) 
     REFERENCES ALUNO(Nr_RGM), 
